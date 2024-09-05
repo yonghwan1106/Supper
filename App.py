@@ -1,4 +1,3 @@
-
 import streamlit as st
 import random
 from anthropic import Anthropic
