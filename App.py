@@ -32,6 +32,6 @@ if st.button("오늘의 메뉴 고르기"):
     st.success(f"오늘의 저녁 메뉴는 '{selected_menu}' 입니다!")
 
 # 건도가 좋아하는 메뉴 목록 표시
-st.subheader("전체 메뉴 목록")
+st.subheader("건도가 좋아하는 메뉴 목록")
 for menu in menus:
     st.write(f"- {menu}")
