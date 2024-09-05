@@ -34,8 +34,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 제목과 날짜 추가
-st.markdown('<p class="big-font">건호 도윤의 영양만점 저녁 메뉴 선택기 🍽️</p>', unsafe_allow_html=True)
-st.markdown(f'<p class="medium-font">오늘 날짜: {date.today().strftime("%Y년 %m월 %d일")}</p>', unsafe_allow_html=True)
+st.markdown('<p class="big-font">🏠 건호 도윤의 영양만점 저녁 메뉴 선택기 🍽️</p>', unsafe_allow_html=True)
+st.markdown(f'<p class="medium-font">📅 오늘 날짜: {date.today().strftime("%Y년 %m월 %d일")}</p>', unsafe_allow_html=True)
 
 # 메뉴 리스트와 영양 정보, 추천 보조 메뉴
 menus = {
@@ -120,23 +120,23 @@ col1, col2 = st.columns([2, 1])
 
 with col1:
     # 버튼을 누르면 랜덤 메뉴 선택
-    if st.button("오늘의 메뉴 고르기"):
+    if st.button("🎲 오늘의 메뉴 고르기"):
         selected_menu = select_random_menu()
-        st.markdown(f'<p class="medium-font">오늘의 저녁 메뉴는 \'{selected_menu}\' 입니다!</p>', unsafe_allow_html=True)
+        st.markdown(f'<p class="medium-font">🍽️ 오늘의 저녁 메뉴는 \'{selected_menu}\' 입니다!</p>', unsafe_allow_html=True)
         
         # 선택된 메뉴의 영양 정보와 추천 보조 메뉴 표시
-        st.markdown('<p class="small-font">영양 정보</p>', unsafe_allow_html=True)
+        st.markdown('<p class="small-font">🍎 영양 정보</p>', unsafe_allow_html=True)
         nutrition_info = menus[selected_menu]
         for key, value in nutrition_info.items():
             if key != "추천 보조 메뉴":
                 st.write(f"{key}: {value}")
         
-        st.markdown('<p class="small-font">추천 보조 메뉴</p>', unsafe_allow_html=True)
+        st.markdown('<p class="small-font">🥗 추천 보조 메뉴</p>', unsafe_allow_html=True)
         st.write(nutrition_info["추천 보조 메뉴"])
 
 with col2:
     # 어린이 영양에 대한 팁
-    st.markdown('<p class="medium-font">어린이 영양 팁</p>', unsafe_allow_html=True)
+    st.markdown('<p class="medium-font">🧒 어린이 영양 팁</p>', unsafe_allow_html=True)
     tips = [
         "다양한 색깔의 과일과 채소를 섭취하도록 권장하세요.",
         "단백질 섭취를 위해 살코기, 생선, 달걀, 두부 등을 골고루 제공하세요.",
@@ -150,11 +150,11 @@ with col2:
         st.markdown(f'<p class="small-font">• {tip}</p>', unsafe_allow_html=True)
 
 # 모든 메뉴와 영양 정보 표시
-st.markdown('<p class="medium-font">전체 메뉴 목록과 영양 정보</p>', unsafe_allow_html=True)
+st.markdown('<p class="medium-font">📋 전체 메뉴 목록과 영양 정보</p>', unsafe_allow_html=True)
 for menu, info in menus.items():
     with st.expander(menu):
         for key, value in info.items():
             st.write(f"{key}: {value}")
 
 # 영양 정보에 대한 참고사항
-st.markdown('<p class="small-font highlight">참고: 위의 영양 정보는 대략적인 추정치이며, 정확한 값은 재료와 조리 방법에 따라 달라질 수 있습니다. 추천 보조 메뉴는 영양 균형을 위한 제안이며, 아이들의 기호에 따라 조절할 수 있습니다.</p>', unsafe_allow_html=True)
+st.markdown('<p class="small-font highlight">ℹ️ 참고: 위의 영양 정보는 대략적인 추정치이며, 정확한 값은 재료와 조리 방법에 따라 달라질 수 있습니다. 추천 보조 메뉴는 영양 균형을 위한 제안이며, 아이들의 기호에 따라 조절할 수 있습니다.</p>', unsafe_allow_html=True)
